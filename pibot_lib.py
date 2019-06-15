@@ -33,7 +33,7 @@ def turn_left():
     rm.setSpeed(50)
     lm.run(Raspi_MotorHAT.FORWARD)
     rm.run(Raspi_MotorHAT.BACKWARD)
-    sleep(0.05)
+    sleep(0.25)
     turn_off_motors()
 
 def turn_right():
@@ -41,7 +41,7 @@ def turn_right():
     rm.setSpeed(50)
     lm.run(Raspi_MotorHAT.BACKWARD)
     rm.run(Raspi_MotorHAT.FORWARD)
-    sleep(0.05)
+    sleep(0.25)
     turn_off_motors()
 
 
