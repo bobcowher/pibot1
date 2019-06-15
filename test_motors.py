@@ -1,5 +1,6 @@
 import time
 import atexit
+from Raspi_MotorHAT import Raspi_MotorHAT
 
 mh = Raspi_MotorHAT(addr=0x6f)
 lm = mh.getMotor(1)
