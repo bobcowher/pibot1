@@ -27,11 +27,11 @@ def back(time):
     rm.run(Raspi_MotorHAT.BACKWARD)
     time.sleep(time)
 
-def turn_left()
+def turn_left():
     lm.run(Raspi_MotorHAT.FORWARD)
     rm.run(Raspi_MotorHAT.BACKWARD)
 
-def turn_right()
+def turn_right():
     lm.run(Raspi_MotorHAT.BACKWARD)
     rm.run(Raspi_MotorHAT.FORWARD)
 
