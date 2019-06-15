@@ -1,4 +1,4 @@
-import time
+from time import sleep
 import atexit
 from Raspi_MotorHAT import Raspi_MotorHAT
 
@@ -12,31 +12,37 @@ def turn_off_motors():
     lm.run(Raspi_MotorHAT.RELEASE)
     rm.run(Raspi_MotorHAT.RELEASE)
 
-def forward(time):
+def forward(sleep_time):
     lm.setSpeed(150)
     rm.setSpeed(150)
     lm.run(Raspi_MotorHAT.FORWARD)
     rm.run(Raspi_MotorHAT.FORWARD)
-    time.sleep(time)
+    sleep(sleep_time)
+    turn_off_motors()
 
-def back(time):
+def back(sleep_time):
     lm.setSpeed(150)
     rm.setSpeed(150)
     lm.run(Raspi_MotorHAT.BACKWARD)
     rm.run(Raspi_MotorHAT.BACKWARD)
-    time.sleep(time)
+    sleep(sleep_time)
+    turn_off_motors()
 
 def turn_left():
     lm.setSpeed(50)
     rm.setSpeed(50)
     lm.run(Raspi_MotorHAT.FORWARD)
     rm.run(Raspi_MotorHAT.BACKWARD)
+    sleep(0.05)
+    turn_off_motors()
 
 def turn_right():
     lm.setSpeed(50)
     rm.setSpeed(50)
     lm.run(Raspi_MotorHAT.BACKWARD)
     rm.run(Raspi_MotorHAT.FORWARD)
+    sleep(0.05)
+    turn_off_motors()
 
 
 atexit.register(turn_off_motors)
