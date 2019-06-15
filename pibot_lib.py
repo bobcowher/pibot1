@@ -8,10 +8,6 @@ lm = mh.getMotor(1)
 rm = mh.getMotor(2)
 
 
-
-atexit.register(turn_off_motors)
-
-
 def turn_off_motors():
     lm.run(Raspi_MotorHAT.RELEASE)
     rm.run(Raspi_MotorHAT.RELEASE)
@@ -43,6 +39,7 @@ def turn_right():
     rm.run(Raspi_MotorHAT.FORWARD)
 
 
+atexit.register(turn_off_motors)
 
 
 
