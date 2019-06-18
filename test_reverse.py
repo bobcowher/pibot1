@@ -4,4 +4,4 @@ import sys
 
 bot = robot.Robot()
 
-reverse(bot, int(sys.argv[0]))
+reverse(bot, int(sys.argv[1]))
