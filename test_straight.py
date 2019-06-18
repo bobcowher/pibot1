@@ -4,4 +4,4 @@ import sys
 
 bot = robot.Robot()
 
-straight(bot, sys.argv[0])
+straight(bot, int(sys.argv[0]))
