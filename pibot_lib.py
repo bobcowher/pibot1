@@ -3,7 +3,8 @@ from time import sleep
 
 def straight(bot, seconds):
     bot.set_left(80)
-    bot.set_right(70)
+    bot.set_right(80)
+
     sleep(0.5)
     bot.set_right(80)
     sleep(seconds)
