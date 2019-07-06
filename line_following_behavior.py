@@ -26,17 +26,17 @@ class LineFollowerBehavior:
         
 
         self.robot.left_line_sensor.when_line = self.when_left_crosses_line
-        self.robot.left_line_sensor.when_line = right_line_sensor_blocked = True
+        self.robot.left_line_sensor.when_line = def right_line_sensor_blocked = True
 
         self.robot.left_line_sensor.when_no_line = self.when_left_off_line
-        self.robot.left_line_sensor.when_no_line = right_line_sensor_blocked = False
+        self.robot.left_line_sensor.when_no_line = def right_line_sensor_blocked = False
 
 
         self.robot.right_line_sensor.when_line = self.when_right_crosses_line
-        self.robot.right_line_sensor.when_line = left_line_sensor_blocked = True
+        self.robot.right_line_sensor.when_line = def left_line_sensor_blocked = True
 
         self.robot.right_line_sensor.when_no_line = self.when_right_off_line
-        self.robot.right_line_sensor.when_no_line = left_line_sensor_blocked = False
+        self.robot.right_line_sensor.when_no_line = def left_line_sensor_blocked = False
 
         if(left_line_sensor_blocked and right_line_sensor_blocked):
             self.robot.set_left(self.cornering)
