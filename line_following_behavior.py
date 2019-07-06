@@ -2,7 +2,7 @@ from robot import Robot
 from time import sleep
 
 class LineFollowerBehavior:
-    def __init__(self, robot, forward_speed=25, cornering=-25):
+    def __init__(self, robot, forward_speed=25, cornering=-35):
         self.robot = robot
         self.forward_speed = forward_speed
         self.cornering = cornering
