@@ -17,7 +17,7 @@ servo_mid_point_ms = 1.5
 
 
 # What a deflection of 90 degrees is in pulse length in milliseconds
-deflect_90_in_ms = 0.5
+deflect_90_in_ms = 0.7
 
 # Steps for every millisecond
 steps_per_ms = pulse_steps / period_in_ms
