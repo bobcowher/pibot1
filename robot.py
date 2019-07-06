@@ -1,6 +1,7 @@
 from time import sleep
 import atexit
 from Raspi_MotorHAT import Raspi_MotorHAT
+from gpiozero import LineSensor
 
 class Robot(object):
     def __init__(self, motorhat_addr=0x6f):
@@ -11,9 +12,22 @@ class Robot(object):
 
         atexit.register(self.stop_motors)
 
+        # Setup the line sensors
+        self.left_line_sensor = LineSensor(23, pull_up=True)
+        self.right_line_sensor = LineSensor(16, pull_up=True)
+
     def stop_motors(self):
         self.left_motor.run(Raspi_MotorHAT.RELEASE)
         self.right_motor.run(Raspi_MotorHAT.RELEASE)
+
+    def stop_all(self):
+        self.stop_motors()
+
+        # Clear sensor handlers
+        self.left_line_sensor.when_line = None
+        self.left_line_sensor.when_no_line = None
+        self.right_line_sensor.when_line = None
+        self.right_line_sensor.when_line = None
 
     def convert_speed(self, speed):
         #Choose the running mode
