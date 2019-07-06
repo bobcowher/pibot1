@@ -9,11 +9,11 @@ class LineFollowerBehavior:
     
     def when_right_crosses_line(self):
         self.robot.set_right(self.cornering)
-        sleep(0.04)
+        print("Cornering right")
 
     def when_left_crosses_line(self):
         self.robot.set_left(self.cornering)
-        sleep(0.04)
+        print("Cornering Left")
 
     def when_right_off_line(self):
         self.robot.set_right(self.forward_speed)
