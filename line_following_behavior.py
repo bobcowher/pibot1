@@ -35,5 +35,5 @@ class LineFollowerBehavior:
     
 
 bot = Robot()
-behavior = LineFollowerBehavior(bot, 30, 0)
+behavior = LineFollowerBehavior(bot, 30, -40)
 behavior.run()
