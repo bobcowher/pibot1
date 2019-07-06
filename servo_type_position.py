@@ -1,7 +1,7 @@
 from Raspi_MotorHAT.Raspi_PWM_Servo_Driver import PWM
 import atexit
 
-pwm = PWM(0x6f)
+pwm = PWM(0x15f)
 pwm_frequency = 60
 pwm.setPWMFreq(pwm_frequency)
 
