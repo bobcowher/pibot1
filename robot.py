@@ -16,6 +16,11 @@ class Robot(object):
         self.right_line_sensor = LineSensor(23, queue_len=3, pull_up=True)
         self.left_line_sensor = LineSensor(16, queue_len=3, pull_up=True)
 
+        right_line_sensor_stuck = ""
+        left_line_sensor_stuck = ""
+
+
+
     def stop_motors(self):
         self.left_motor.run(Raspi_MotorHAT.RELEASE)
         self.right_motor.run(Raspi_MotorHAT.RELEASE)
@@ -52,6 +57,10 @@ class Robot(object):
 
         self.right_motor.setSpeed(output_speed)
         self.right_motor.run(mode)
+
+    def set_left_line_sensor_stuck(self, stuck):
+        left_line_sensor_stuck = stuck
     
-
-
+    def set_right_line_sensor_stuck(self, stuck):
+        right_line_sensor_stuck = stuck
+    
