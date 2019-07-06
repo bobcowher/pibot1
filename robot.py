@@ -13,8 +13,8 @@ class Robot(object):
         atexit.register(self.stop_motors)
 
         # Setup the line sensors
-        self.left_line_sensor = LineSensor(23, pull_up=True)
-        self.right_line_sensor = LineSensor(16, pull_up=True)
+        self.left_line_sensor = LineSensor(23, queue_len=3, pull_up=True)
+        self.right_line_sensor = LineSensor(16, queue_len=3, pull_up=True)
 
     def stop_motors(self):
         self.left_motor.run(Raspi_MotorHAT.RELEASE)
