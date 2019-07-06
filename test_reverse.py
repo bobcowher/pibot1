@@ -4,4 +4,7 @@ import sys
 
 bot = robot.Robot()
 
-reverse(bot, int(sys.argv[1]))
+bot.set_left(-30)
+bot.set_right(-30)
+
+sleep(1)
