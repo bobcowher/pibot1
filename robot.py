@@ -69,7 +69,7 @@ class Robot(object):
         self.right_line_sensor_stuck = stuck
     
     def set_pan(self, angle):
-        self.servos.set_servo_angle(0, angle)
+        self.servos.set_servo_angle(14, angle)
 
     def set_tilt(self, angle):
-        self.servos.set_servo_angle(2, angle)
+        self.servos.set_servo_angle(15, angle)
