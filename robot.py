@@ -72,4 +72,4 @@ class Robot(object):
         self.servos.set_servo_angle(0, angle)
 
     def set_tilt(self, angle):
-        self.servos.set_servo_angle(1, angle)
+        self.servos.set_servo_angle(2, angle)
