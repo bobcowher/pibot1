@@ -2,6 +2,7 @@ from time import sleep
 import atexit
 from Raspi_MotorHAT import Raspi_MotorHAT
 from gpiozero import LineSensor
+from servos import Servos
 
 class Robot(object):
     def __init__(self, motorhat_addr=0x6f):
@@ -19,6 +20,8 @@ class Robot(object):
         self.right_line_sensor_stuck = ""
         self.left_line_sensor_stuck = ""
 
+        self.servos = Servos(addr=motorhat_addr)
+
 
 
     def stop_motors(self):
@@ -27,6 +30,7 @@ class Robot(object):
 
     def stop_all(self):
         self.stop_motors()
+        self.servos.stop_all()
 
         # Clear sensor handlers
         self.left_line_sensor.when_line = None
@@ -64,3 +68,8 @@ class Robot(object):
     def set_right_line_sensor_stuck(self, stuck):
         self.right_line_sensor_stuck = stuck
     
+    def set_pan(self, angle):
+        self.servos.set_servo_angle(1, angle)
+
+    def set_tilt(self, angle):
+        self.servos.set_servo_angle(0, angle)
