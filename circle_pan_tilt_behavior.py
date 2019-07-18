@@ -3,7 +3,7 @@ import math
 from robot import Robot
 
 class CirclePanTiltBehavior(object):
-    def __init__self, the_robot):
+    def __init__(self, the_robot):
         self.robot = the_robot
         self.current_time = 0
         self.frames_per_circle = 50
