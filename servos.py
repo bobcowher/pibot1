@@ -31,12 +31,12 @@ class Servos(object):
         self._pwm(14, 0, 4096)
         self._pwm(15, 0, 4096)
     
-    def convert_degrees_to_pwm(position):
+    def convert_degrees_to_pwm(self, position):
         return int(self.servo_mid_point_steps + (position * self.steps_per_degree))
 
     def set_servo_angle(self, channel, angle):
         """position: The position in degrees from the center. -90 to 90"""
         if angle > 90 or angle < -90:
             raise ValueError("Angle outside of range")
-        off_step = self._convert_degrees_to_pwm(angle)
+        off_step = self.convert_degrees_to_pwm(angle)
         self._pwm.setPWM(channel, 0, off_step)
