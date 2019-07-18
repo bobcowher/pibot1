@@ -1,3 +1,5 @@
+from Raspi_MotorHAT.Raspi_PWM_Servo_Driver import PWM
+
 class Servos(object):
     def __init__(self, addr=0x6f, deflect_90_in_ms = 1.15):
         """addr: The i2c address of the PWM chip.
@@ -30,7 +32,7 @@ class Servos(object):
         self._pwm(15, 0, 4096)
     
     def convert_degrees_to_pwm(position):
-        return int(servo_mid_point_steps + (position * steps_per_degree))
+        return int(self.servo_mid_point_steps + (position * self.steps_per_degree))
 
     def set_servo_angle(self, channel, angle):
         """position: The position in degrees from the center. -90 to 90"""
