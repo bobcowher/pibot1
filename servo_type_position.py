@@ -40,6 +40,6 @@ while(True):
     position = int(input("Type your position in degrees (90 to -90, 0 is middle): "))
     print("Second line inside Loop")
     end_step = convert_degrees_to_pwm(position)
-    print("The end step is " + end_step)
+    print("The end step is {0}".format(end_step))
     print("Third line inside Loop")
     pwm.setPWM(0, 0, end_step)
