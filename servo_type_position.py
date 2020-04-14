@@ -36,6 +36,6 @@ def stop():
     pwm.setPWM(0, 0, 4096)
 
 while(True):
-    position = int(raw_input("Type your position in degrees (90 to -90, 0 is middle): "))
+    position = int(input("Type your position in degrees (90 to -90, 0 is middle): "))
     end_step = convert_degrees_to_pwm(position)
     pwm.setPWM(0, 0, end_step)
