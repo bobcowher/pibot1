@@ -15,12 +15,14 @@ GPIO.setup(GPIO_ECHO, GPIO.IN)
  
 def distance():
     # set Trigger to HIGH
-    GPIO.output(GPIO_TRIGGER, True)
- 
-    # set Trigger after 0.01ms to LOW
+    print("Calculating distance")
+
+    GPIO.output(GPIO_TRIGGER, GPIO.HIGH)
+
     time.sleep(0.00001)
-    GPIO.output(GPIO_TRIGGER, False)
- 
+
+    GPIO.output(GPIO_TRIGGER, GPIO.LOW)
+
     StartTime = time.time()
     StopTime = time.time()
  
@@ -42,6 +44,13 @@ def distance():
     return distance
  
 if __name__ == '__main__':
+
+    GPIO.output(GPIO_TRIGGER, GPIO.LOW)
+
+    print("Waiting for sensor to settle")
+
+    time.sleep(2)
+
     try:
         while True:
             dist = distance()
